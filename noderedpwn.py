@@ -6,6 +6,10 @@ import string
 import sys
 import requests
 import websockets
+import ssl
+
+#bypass ssl error by monkey patching
+ssl.match_hostname = lambda cert, hostname: True
 
 def random_name():
     """
